@@ -8,15 +8,21 @@ h2 {
 .fa-cog {
   font-size: 40px;
 }
+.card-content p.title {
+  font-size: 1.25rem ;
+}
 
 @media screen and (max-width: 768px) {
-    .hero .title {
-      font-weight: bold;
-    }
+  .hero .title {
+    font-weight: bold;
+  }
 }
-@media screen and (min-width: 769px), print {
+@media screen and (min-width: 769px) {
   .hero .title {
     font-size: 2.5rem;
+  }
+  .pd {
+    padding: 2em 0;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -24,6 +30,9 @@ h2 {
     font-size: 4rem;
     margin-top: 2rem;
   }
+
   #learn {
-    margin-bottom: 2rem; }
+    margin-bottom: 2rem;
+  }
+
 }

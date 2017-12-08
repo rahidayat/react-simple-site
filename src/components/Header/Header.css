@@ -1,5 +1,9 @@
-.nav {
+.nav.is-fixed-top {
   background-color: #383838;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 30;
 }
 .nav a:hover {
   color: gray;

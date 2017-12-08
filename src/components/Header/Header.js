@@ -19,10 +19,10 @@ class Header extends Component {
     let menuActive = this.state.isToggleOn ? 'is-active' : ''
 
     return (
-      <div className="nav has-shadow">
+      <div className="nav has-shadow is-fixed-top">
         <div className="container">
           <div className="nav-left">
-            <a className="nav-item">My Company</a>
+            <a className="nav-item">My Website</a>
           </div>
           <span className={`nav-toggle ${menuActive}`} onClick={this.handleClick}>
             <span></span>
