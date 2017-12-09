@@ -9,7 +9,15 @@ h2 {
   font-size: 40px;
 }
 .card-content p.title {
-  font-size: 1.25rem ;
+  font-size: 1rem ;
+}
+
+.columns.pd{
+  flex-wrap: wrap;
+}
+
+.column.is-one-third{
+  display: flex;
 }
 
 @media screen and (max-width: 768px) {

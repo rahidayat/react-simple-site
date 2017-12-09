@@ -31,15 +31,14 @@ class Header extends Component {
           </span>
           <div className={`nav-right nav-menu ${menuActive}`}>
             <Link to="/" className="nav-item r-item">Home</Link>
-            <Link to="/faq" className="nav-item r-item">Features</Link>
-            <Link to="/faq" className="nav-item r-item">About</Link>
-            <Link to="/faq" className="nav-item r-item">FAQ</Link>
+            <Link to="/fetures" className="nav-item r-item">Features</Link>
+            <Link to="/about" className="nav-item r-item">About</Link>
 
             <div className="nav-item">
               <p className="control">
                 <a className="button is-primary is-outlined">
-                  <span className="icon"><i className="fa fa-download"></i></span>
-                  <span>Join Now</span>
+                  <span className="icon"><i className="fa fa-envelope"></i></span>
+                  <span>Contact</span>
                 </a>
               </p>
             </div>

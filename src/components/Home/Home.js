@@ -3,6 +3,23 @@ import './Home.css'
 
 
 class Home extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      comments: []
+    }
+  }
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/comments')
+    .then(status => {
+      return status.json();
+    }).then(data => {
+      // console.log(data.splice(0,6));
+      let apiComments = data.splice(0,6)
+      this.setState({comments: apiComments})
+    })
+    .catch(err => console.log(err))
+  }
   render() {
     let heading = "Knowledge is the light"
     let subtitle = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -20,7 +37,7 @@ class Home extends Component {
           </div>
         </section>
 
-        <section className="section" id="tes">
+        <section className="section">
           <div className="container">
             <div className="columns pd is-desktop">
               <div className="column is-1 has-text-centered">
@@ -35,32 +52,20 @@ class Home extends Component {
             </div>
 
 
-          <div className="columns pd">
-            <div className="column">
-              <div className="card">
-                <div className="card-content">
-                  <p className="title">"I think it's an absolutely excellent tool for our business. I can't survive without this thing."</p>
-                  <p className="subtitle">- Gary Simon</p>
-                </div>
-              </div>
+            <div className="columns pd">
+              {this.state.comments.map(comment => {
+                return(
+                  <div className="column is-one-third">
+                    <div className="card">
+                      <div className="card-content">
+                        <p className="title">"{comment.body}"</p>
+                        <p className="subtitle">- {comment.email.toLowerCase()}</p>
+                      </div>
+                    </div>
+                  </div>
+                )
+              })}
             </div>
-            <div className="column">
-              <div className="card">
-                <div className="card-content">
-                  <p className="title">"I think it's an absolutely excellent tool for our business. I can't survive without this thing."</p>
-                  <p className="subtitle">- Gary Simon</p>
-                </div>
-              </div>
-            </div>
-            <div className="column">
-              <div className="card">
-                <div className="card-content">
-                  <p className="title">"I think it's an absolutely excellent tool for our business. I can't survive without this thing."</p>
-                  <p className="subtitle">- Gary Simon</p>
-                </div>
-              </div>
-            </div>
-          </div>
           </div>
         </section>
 
